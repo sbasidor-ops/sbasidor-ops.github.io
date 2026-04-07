@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Софья Сидоренкова - Портфолио</title>
+    <style>
+        :root {
+            --primary-blue: #004080;
+            --light-blue: #e6f0fa;
+            --accent-blue: #0066cc;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-gray: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            background-color: var(--bg-gray);
+        }
+        header {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header h2 {
+            margin: 10px 0 0;
+            font-weight: 400;
+            color: var(--light-blue);
+        }
+        .contact-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            border-bottom: 1px dotted white;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .about-section, .skills-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent-blue);
+        }
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid var(--accent-blue);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        .project-header h3 {
+            margin-top: 0;
+            color: var(--primary-blue);
+        }
+        .project-role {
+            font-weight: bold;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .project-body {
+            flex-grow: 1;
+        }
+        .project-body ul {
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+        .project-tech {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eeeeee;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+        h2.section-title {
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Сидоренкова Софья [cite: 391]</h1>
+    <h2>Бизнес-аналитик / Системный аналитик [cite: 399]</h2>
+    <div class="contact-info">
+        <a href="mailto:sbasidor@gmail.com">sbasidor@gmail.com [cite: 393]</a> | 
+        <span>Санкт-Петербург [cite: 395]</span> |
+        <a href="https://github.com/itmo619" target="_blank">GitHub [cite: 761]</a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="about-section">
+        <h2 class="section-title">Обо мне</h2>
+        <p>Аналитик с системным мышлением и опытом реализации ИТ-решений в федеральном ритейле и МСБ[cite: 470]. Мой подход базируется на глубоком анализе «as is», проектировании архитектуры требований и внедрении инструментов (от SQL до low-code), которые приносят прямой финансовый эффект[cite: 471]. Помогаю бизнесу избавляться от операционной рутины, а командам разработки работать по прозрачным и реализуемым ТЗ[cite: 472].</p>
+    </div>
+
+    <div class="skills-section">
+        <h2 class="section-title">Ключевые навыки</h2>
+        <div class="skills-tags">
+            <span class="skill-tag">SQL / PostgreSQL [cite: 455]</span>
+            <span class="skill-tag">Python [cite: 461]</span>
+            <span class="skill-tag">BPMN 2.0 / UML [cite: 458]</span>
+            <span class="skill-tag">REST API [cite: 463]</span>
+            <span class="skill-tag">Power BI / DataLens [cite: 419, 435]</span>
+            <span class="skill-tag">n8n / Airflow [cite: 458, 461]</span>
+            <span class="skill-tag">CJM / JTBD [cite: 467]</span>
+            <span class="skill-tag">Data-Driven Decision Making [cite: 466]</span>
+        </div>
+    </div>
+
+    <h2 class="section-title">Проектный опыт</h2>
+    <div class="projects-grid">
+        
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Федеральная розничная сеть «Лента» [cite: 413]</h3>
+                <div class="project-role">Аналитик данных (Февраль 2024 — н.в.) [cite: 408, 417]</div>
+            </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Auto BP — оптимизация расчетов заказов товаров прямого импорта[cite: 418, 767].</p>
+                <ul>
+                    <li>Спроектировала автоматизированный ИИ-pipeline для расчета заказов[cite: 805].</li>
+                    <li>Снизила оборачиваемость запасов на 37% (с 167 до 90 дней)[cite: 419, 852].</li>
+                    <li>Сократила количество ошибок в управлении поставками до 5% благодаря интеграции SAP и 1C[cite: 420].</li>
+                    <li>Обеспечила экономический эффект (снижение OPEX на 2 050 000 руб/год) с ROI 1.5 млн руб в год[cite: 852, 853, 854].</li>
+                </ul>
+            </div>
+            <div class="project-tech">
+                <strong>Инструменты:</strong> Power BI, Python, n8n, SAP, Power Query[cite: 419, 420, 421, 422].
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Веридия (DWH & BI) [cite: 423, 102]</h3>
+                <div class="project-role">Бизнес-аналитик (Сентябрь 2025 — Январь 2026) [cite: 411, 428]</div>
+            </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Интеллектуальная аналитическая платформа для автоматизации отчетности МСБ[cite: 429, 430, 362].</p>
+                <ul>
+                    <li>Собрала и формализовала бизнес-требования для платформы[cite: 431].</li>
+                    <li>Внедрила систему ключевых метрик для оценки эффективности процессов[cite: 435].</li>
+                    <li>Участвовала в интеграции ИИ-агентов (RAG) для проактивной аналитики запасов и корпоративной базы знаний[cite: 317, 318, 321, 322].</li>
+                </ul>
+            </div>
+            <div class="project-tech">
+                <strong>Инструменты:</strong> Yandex DataLens, AI, ETL-коннекторы, 1C/CRM интеграции[cite: 433, 435, 114, 68].
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>AI Overlay System [cite: 535]</h3>
+                <div class="project-role">Специалист по технологическому стеку [cite: 512, 513]</div>
+            </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Разработка B2B ПО для видеомэппинга и интерактивных шоу в реальном времени[cite: 485, 487].</p>
+                <ul>
+                    <li>Обеспечила интеграцию архитектуры (TouchDesigner ➔ Stable Diffusion ➔ Проектор)[cite: 540, 544].</li>
+                    <li>Разработала модуль обработки видеопотока с задержкой &lt; 2 сек при 30 FPS[cite: 503, 505, 546].</li>
+                    <li>Настроила генерацию UV-масок с корректностью ≥ 97%[cite: 679].</li>
+                </ul>
+            </div>
+            <div class="project-tech">
+                <strong>Инструменты:</strong> TouchDesigner, Stable Diffusion (ComfyUI), Python 3.11, PyTorch, OpenCV[cite: 519, 521, 524, 699].
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <h3>Kasten [cite: 441]</h3>
+                <div class="project-role">Бизнес-аналитик, продуктовый аналитик (Дек 2023 — Май 2024) [cite: 436, 437, 442]</div>
+            </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Образовательное приложение (науки о Земле) с ИИ[cite: 443].</p>
+                <ul>
+                    <li>Сформировала экономические гипотезы для MVP[cite: 444].</li>
+                    <li>Разработала финансовые модели для оптимизации бюджета на маркетинг[cite: 445].</li>
+                    <li>Подготовила детальные технические задания (ТЗ) для разработчиков[cite: 446].</li>
+                </ul>
+            </div>
+            <div class="project-tech">
+                <strong>Инструменты:</strong> Telegram Mini Apps, RAG-модели[cite: 443].
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

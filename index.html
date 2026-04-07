@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Софья Сидоренкова - Аналитика и Автоматизация</title>
+    <title>Софья Сидоренкова - Портфолио</title>
     <style>
         :root {
-            --primary-blue: #003366;
-            --accent-blue: #007bff;
-            --light-blue: #e6f7ff;
-            --success-green: #28a745;
-            --text-dark: #212529;
-            --text-gray: #6c757d;
-            --bg-gray: #f4f7f9;
+            --primary-blue: #004080;
+            --light-blue: #e6f0fa;
+            --accent-blue: #0066cc;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-gray: #f8f9fa;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             color: var(--text-dark);
             margin: 0;
             background-color: var(--bg-gray);
@@ -24,18 +23,17 @@
         header {
             background-color: var(--primary-blue);
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
         header h1 {
             margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
         header h2 {
-            margin: 5px 0 0;
+            margin: 10px 0 0;
             font-weight: 400;
             color: var(--light-blue);
-            font-size: 1.1rem;
         }
         .contact-info {
             margin-top: 15px;
@@ -45,182 +43,89 @@
             color: white;
             text-decoration: none;
             margin: 0 10px;
-            border-bottom: 1px dotted rgba(255,255,255,0.6);
+            border-bottom: 1px dotted white;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 1.5rem;
+            padding: 2rem;
         }
-        
-        /* Skills & About Section */
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        .about-box, .skills-box {
+        .about-section, .skills-section {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .about-box p {
-            margin: 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent-blue);
         }
         .skills-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
         .skill-tag {
             background-color: var(--light-blue);
             color: var(--primary-blue);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.85rem;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 600;
         }
-
-        h2.section-title {
-            color: var(--primary-blue);
-            border-bottom: 2px solid var(--light-blue);
-            padding-bottom: 8px;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
         .project-card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            border-top: 3px solid var(--accent-blue);
-            transition: transform 0.2s ease;
+            border-top: 4px solid var(--accent-blue);
         }
         .project-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
         }
-        
-        /* Card Inner Structure */
-        .card-header, .card-body, .card-footer {
-            padding: 1rem 1.5rem;
-        }
-        .card-header {
-            padding-bottom: 0;
-        }
-        .card-header h3 {
-            margin: 0;
+        .project-header h3 {
+            margin-top: 0;
             color: var(--primary-blue);
         }
         .project-role {
+            font-weight: bold;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .project-body {
+            flex-grow: 1;
+        }
+        .project-body ul {
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+        .project-tech {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eeeeee;
             font-size: 0.85rem;
             color: var(--text-gray);
-            margin-bottom: 1rem;
         }
-        
-        .project-details ul {
-            padding-left: 20px;
-            font-size: 0.9rem;
-            margin: 0;
-        }
-        .card-footer {
-            margin-top: auto;
-            border-top: 1px solid #f0f0f0;
-            font-size: 0.8rem;
-            color: var(--text-gray);
-        }
-
-        /* --- VISUALIZATION ELEMENTS --- */
-        
-        /* 1. KPI Panel for Lenta */
-        .kpi-panel {
-            background-color: #fcfcfc;
-            border: 1px solid #eeeeee;
-            border-radius: 6px;
-            padding: 10px;
-            margin-top: 10px;
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-        }
-        .kpi-item {
-            flex: 1;
-        }
-        .kpi-value {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--success-green);
-        }
-        .kpi-label {
-            font-size: 0.75rem;
-            color: var(--text-gray);
-        }
-        .kpi-divider {
-            color: #ddd;
-            font-size: 1.3rem;
-        }
-
-        /* 2. Process / Architecture Visualizations (SVG) */
-        .visualization-box {
-            background-color: #fafbfc;
-            border-radius: 6px;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #f0f0f0;
-            text-align: center;
-        }
-        .vis-title {
-            font-size: 0.8rem;
+        h2.section-title {
             color: var(--primary-blue);
-            font-weight: bold;
-            margin-bottom: 8px;
+            border-bottom: 2px solid var(--light-blue);
+            padding-bottom: 10px;
         }
-
-        /* Basic SVG styling for flow */
-        svg text {
-            font-family: var(--body-font);
-            font-size: 12px;
-            fill: #333;
-        }
-        svg rect {
-            fill: #fff;
-            stroke: var(--accent-blue);
-            stroke-width: 1;
-            rx: 3; ry: 3;
-        }
-        svg path.connector {
-            stroke: #999;
-            stroke-width: 1;
-            fill: none;
-            marker-end: url(#arrowhead);
-        }
-        /* Defs for arrowheads */
-        svg.defs-only { height: 0; width: 0; position: absolute; }
     </style>
 </head>
 <body>
 
-<svg class="defs-only">
-  <defs>
-    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
-      <polygon points="0 0, 6 2, 0 4" fill="#999" />
-    </marker>
-  </defs>
-</svg>
-
 <header>
     <h1>Сидоренкова Софья</h1>
-    <h2>Бизнес-аналитик | Системный аналитик (data-driven)</h2>
+    <h2>Бизнес-аналитик / Системный аналитик</h2>
     <div class="contact-info">
         <a href="mailto:sbasidor@gmail.com">sbasidor@gmail.com</a> | 
         <span>Санкт-Петербург</span> |
@@ -229,154 +134,98 @@
 </header>
 
 <div class="container">
-    <div class="intro-grid">
-        <div class="about-box">
-            <h2 class="section-title">Обо мне</h2>
-            <p>Опыт реализации ИТ-решений в федеральном ритейле («Лента») и МСБ. Специализируюсь на проектировании архитектуры требований (от анализа «as is»), внедрении low-code инструментов и аналитических панелей, приносящих финансовый эффект и избавляющих бизнес от операционной рутины.</p>
-        </div>
-        <div class="skills-box">
-            <h2 class="section-title">Технологии</h2>
-            <div class="skills-tags">
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Python (data science)</span>
-                <span class="skill-tag">BPMN 2.0 / UML</span>
-                <span class="skill-tag">REST API / ETL</span>
-                <span class="skill-tag">Power BI / DataLens</span>
-                <span class="skill-tag">n8n (low-code automation)</span>
-                <span class="skill-tag">AI RAG / Agents</span>
-            </div>
+    <div class="about-section">
+        <h2 class="section-title">Обо мне</h2>
+        <p>Аналитик с системным мышлением и опытом реализации ИТ-решений в федеральном ритейле и МСБ. Мой подход базируется на глубоком анализе «as is», проектировании архитектуры требований и внедрении инструментов (от SQL до low-code), которые приносят прямой финансовый эффект. Помогаю бизнесу избавляться от операционной рутины, а командам разработки работать по прозрачным и реализуемым ТЗ.</p>
+    </div>
+
+    <div class="skills-section">
+        <h2 class="section-title">Ключевые навыки</h2>
+        <div class="skills-tags">
+            <span class="skill-tag">SQL / PostgreSQL</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">BPMN 2.0 / UML</span>
+            <span class="skill-tag">REST API</span>
+            <span class="skill-tag">Power BI / DataLens</span>
+            <span class="skill-tag">n8n / Airflow</span>
+            <span class="skill-tag">CJM / JTBD</span>
+            <span class="skill-tag">Data-Driven Decision Making</span>
         </div>
     </div>
 
-    <h2 class="section-title">Проектные достижения</h2>
+    <h2 class="section-title">Проектный опыт</h2>
     <div class="projects-grid">
         
         <div class="project-card">
-            <div class="card-header">
-                <h3>Федеральная сеть «Лента»</h3>
+            <div class="project-header">
+                <h3>Федеральная розничная сеть «Лента»</h3>
                 <div class="project-role">Аналитик данных (Февраль 2024 — н.в.)</div>
             </div>
-            <div class="card-body">
-                <div class="project-details">
-                    <p><strong>Проект "Auto BP":</strong> Оптимизация расчетов заказов прямого импорта.</p>
-                    <ul>
-                        <li>Спроектировала ИИ-pipeline для автоматизации расчетов заказов.</li>
-                        <li>Обеспечила интеграцию SAP и 1C для снижения OPEX на 2 млн руб/год.</li>
-                        <li>Сократила ошибки в управлении поставками до 5%.</li>
-                    </ul>
-                </div>
-
-                <div class="kpi-panel">
-                    <div class="kpi-item">
-                        <div class="kpi-value">167 → 90</div>
-                        <div class="kpi-label">Дней оборачиваемости (снижение на 37%)</div>
-                    </div>
-                    <div class="kpi-divider">|</div>
-                    <div class="kpi-item">
-                        <div class="kpi-value">1.5 млн ₽</div>
-                        <div class="kpi-label">Чистый эффект (ROI) / год</div>
-                    </div>
-                </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Auto BP — оптимизация расчетов заказов товаров прямого импорта.</p>
+                <ul>
+                    <li>Спроектировала автоматизированный ИИ-pipeline для расчета заказов.</li>
+                    <li>Снизила оборачиваемость запасов на 37% (с 167 до 90 дней).</li>
+                    <li>Сократила количество ошибок в управлении поставками до 5% благодаря интеграции SAP и 1C.</li>
+                    <li>Обеспечила экономический эффект (снижение OPEX на 2 050 000 руб/год) с ROI 1.5 млн руб в год.</li>
+                </ul>
             </div>
-            <div class="card-footer">
-                Технологии: Power BI, Python, n8n, Power Query, SAP/1C APIs.
+            <div class="project-tech">
+                <strong>Инструменты:</strong> Power BI, Python, n8n, SAP, Power Query.
             </div>
         </div>
 
         <div class="project-card">
-            <div class="card-header">
+            <div class="project-header">
                 <h3>Веридия (DWH & BI)</h3>
-                <div class="project-role">Бизнес-аналитик (Сентябрь 2025 — н.в.)</div>
+                <div class="project-role">Бизнес-аналитик (Сентябрь 2025 — Январь 2026)</div>
             </div>
-            <div class="card-body">
-                <div class="project-details">
-                    <p><strong>Проект:</strong> Платформа автоматизации отчетности МСБ с ИИ.</p>
-                    <ul>
-                        <li>Формализовала бизнес-требования для платформы и КЭП.</li>
-                        <li>Участвовала в интеграции ИИ-агентов (RAG) для проактивной аналитики.</li>
-                        <li>Разработала систему ключевых метрик для оценки эффективности процессов.</li>
-                    </ul>
-                </div>
-
-                <div class="visualization-box">
-                    <div class="vis-title">Схема архитектуры решения (упрощенная)</div>
-                    <svg width="300" height="90" viewBox="0 0 300 90">
-                        <rect x="10" y="25" width="70" height="40" stroke="#ffc107" rx="3" ry="3"/>
-                        <text x="45" y="40" text-anchor="middle" font-weight="bold">Источники</text>
-                        <text x="45" y="55" text-anchor="middle" font-size="10">1C, CRM, XLS</text>
-                        
-                        <rect x="110" y="25" width="80" height="40" stroke="#dc3545" fill="#fffef0"/>
-                        <text x="150" y="40" text-anchor="middle" font-weight="bold">AI Агенты</text>
-                        <text x="150" y="55" text-anchor="middle" font-size="10">(RAG/Анализ)</text>
-
-                        <rect x="220" y="25" width="70" height="40" stroke="#28a745"/>
-                        <text x="255" y="40" text-anchor="middle" font-weight="bold">DataLens</text>
-                        <text x="255" y="55" text-anchor="middle" font-size="10">(Дашборды)</text>
-                        
-                        <path class="connector" d="M80 45 L110 45" />
-                        <path class="connector" d="M190 45 L220 45" />
-                    </svg>
-                </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Интеллектуальная аналитическая платформа для автоматизации отчетности МСБ.</p>
+                <ul>
+                    <li>Собрала и формализовала бизнес-требования для платформы.</li>
+                    <li>Внедрила систему ключевых метрик для оценки эффективности процессов.</li>
+                    <li>Участвовала в интеграции ИИ-агентов (RAG) для проактивной аналитики запасов и корпоративной базы знаний.</li>
+                </ul>
             </div>
-            <div class="card-footer">
-                Технологии: Yandex DataLens, AI Agents, ETL, 1C/CRM Integration.
+            <div class="project-tech">
+                <strong>Инструменты:</strong> Yandex DataLens, AI, ETL-коннекторы, 1C/CRM интеграции.
             </div>
         </div>
 
         <div class="project-card">
-            <div class="card-header">
-                <h3>AI Video Mapping System</h3>
+            <div class="project-header">
+                <h3>AI Overlay System</h3>
                 <div class="project-role">Специалист по технологическому стеку</div>
             </div>
-            <div class="card-body">
-                <div class="project-details">
-                    <p><strong>Проект:</strong> ПО для генерации интерактивных шоу в реальном времени.</p>
-                    <ul>
-                        <li>Обеспечила интеграцию TouchDesigner и Stable Diffusion (ComfyUI).</li>
-                        <li>Разработала модуль с генерацией UV-масок с корректностью ≥ 97%.</li>
-                        <li>Настроила обработку видеопотока с задержкой < 2 сек.</li>
-                    </ul>
-                </div>
-
-                <div class="visualization-box">
-                    <div class="vis-title">Пайплайн генерации в реальном времени</div>
-                    <svg width="320" height="80" viewBox="0 0 320 80">
-                        <rect x="5" y="20" width="90" height="40" rx="20"/>
-                        <text x="50" y="45" text-anchor="middle">TouchDesigner</text>
-                        
-                        <rect x="115" y="20" width="90" height="40" rx="5" fill="#fff5f5"/>
-                        <text x="160" y="38" text-anchor="middle" font-weight="bold">Stable Diffusion</text>
-                        <text x="160" y="53" text-anchor="middle" font-size="10">(ComfyUI / UV-маски)</text>
-
-                        <rect x="235" y="20" width="80" height="40" rx="20"/>
-                        <text x="275" y="45" text-anchor="middle">Проектор</text>
-                        
-                        <path class="connector" d="M95 32 L115 32" />
-                        <path class="connector" d="M115 50 L95 50" marker-end=""/> <path class="connector" d="M95 40 L115 40" marker-end="url(#arrowhead)"/> <path class="connector" d="M205 40 L235 40" marker-end="url(#arrowhead)"/>
-                    </svg>
-                </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Разработка B2B ПО для видеомэппинга и интерактивных шоу в реальном времени.</p>
+                <ul>
+                    <li>Обеспечила интеграцию архитектуры (TouchDesigner ➔ Stable Diffusion ➔ Проектор).</li>
+                    <li>Разработала модуль обработки видеопотока с задержкой &lt; 2 сек при 30 FPS.</li>
+                    <li>Настроила генерацию UV-масок с корректностью ≥ 97%.</li>
+                </ul>
             </div>
-            <div class="card-footer">
-                Технологии: TouchDesigner, Stable Diffusion, OpenCV, PyTorch, Python 3.11.
+            <div class="project-tech">
+                <strong>Инструменты:</strong> TouchDesigner, Stable Diffusion (ComfyUI), Python 3.11, PyTorch, OpenCV.
             </div>
         </div>
 
         <div class="project-card">
-            <div class="card-header">
-                <h3>Kasten (Образовательное приложение)</h3>
-                <div class="project-role">Продуктовый аналитик (Дек 2023 — Май 2024)</div>
+            <div class="project-header">
+                <h3>Kasten </h3>
+                <div class="project-role">Бизнес-аналитик, продуктовый аналитик (Дек 2023 — Май 2024)</div>
             </div>
-            <div class="card-body">
-                <div class="project-details">
-                    <p><strong>Проект:</strong> Разработка MVP приложения с ИИ для наук о Земле.</p>
-                    <ul>
-                        <li>Сформировала экономические гипотезы и финмодель для оптимизации маркетинга.</li>
-                        <li>Подготовила детальные технические задания (ТЗ) для разработки Telegram Mini App.</li>
-                    </ul>
-                </div>
+            <div class="project-body">
+                <p><strong>Проект:</strong> Образовательное приложение (науки о Земле) с ИИ.</p>
+                <ul>
+                    <li>Сформировала экономические гипотезы для MVP.</li>
+                    <li>Разработала финансовые модели для оптимизации бюджета на маркетинг.</li>
+                    <li>Подготовила детальные технические задания (ТЗ) для разработчиков.</li>
+                </ul>
             </div>
-            <div class="card-footer">
-                Технологии: Telegram Mini Apps, RAG-модели, Фин. моделирование.
+            <div class="project-tech">
+                <strong>Инструменты:</strong> Telegram Mini Apps, RAG-модели.
             </div>
         </div>
 
